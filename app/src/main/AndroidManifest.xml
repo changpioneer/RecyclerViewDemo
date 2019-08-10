@@ -18,6 +18,8 @@
         </activity>
         <activity android:name=".activity.StickRecyclerViewActivity"/>
         <activity android:name=".activity.PowerfulStickRecyclerViewActivity" />
+        <activity android:name=".simpledemo.SimpleMainActivity" />
+        <activity android:name=".simpledemo.vertical.RecyclerVerActivity"/>
     </application>
 
 </manifest>

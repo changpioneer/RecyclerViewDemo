@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.pioneer.demomap.R;
+import com.pioneer.demomap.simpledemo.SimpleMainActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -20,14 +21,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.btn_recycler, R.id.btn_recycler1})
+    @OnClick({R.id.btn_recycler, R.id.btn_recycler1, R.id.btn_simple_recycler})
     public void onViewClicked(View view) {
         switch (view.getId()) {
+            case R.id.btn_simple_recycler:
+                startActivity(new Intent(MainActivity.this, SimpleMainActivity.class));
+                break;
             case R.id.btn_recycler:
                 startActivity(new Intent(MainActivity.this, StickRecyclerViewActivity.class));
                 break;
             case R.id.btn_recycler1:
                 startActivity(new Intent(MainActivity.this, PowerfulStickRecyclerViewActivity.class));
+                break;
+            default:
                 break;
         }
     }
