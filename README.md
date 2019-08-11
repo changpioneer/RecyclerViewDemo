@@ -5,7 +5,7 @@
 ![demo](pic/2.gif)
 
 
-#RecyclerView实现方式
+# RecyclerView实现方式
 
 ### 第一步：设置布局管理器
 用来确定每一个item如何进行排列摆放:
