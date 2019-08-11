@@ -20,6 +20,8 @@
         <activity android:name=".activity.PowerfulStickRecyclerViewActivity" />
         <activity android:name=".simpledemo.SimpleMainActivity" />
         <activity android:name=".simpledemo.vertical.RecyclerVerActivity"/>
+        <activity android:name=".simpledemo.gridview.GrideViewActivity"/>
+        <activity android:name=".simpledemo.alldemo.AllRecyclerVeiwActivity"/>
     </application>
 
 </manifest>

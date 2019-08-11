@@ -23,8 +23,6 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
         final TypedArray typedArray = context.obtainStyledAttributes(ATTRS);
         mDivider = typedArray.getDrawable(0);
         typedArray.recycle();
-
-//        mDivider = new ColorDrawable(context.getResources().getColor(R.color.colorAccent));
         setOrientation(orientation);
     }
 
@@ -55,7 +53,7 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
         if(mOrientation == LinearLayoutManager.VERTICAL){
             drawVertical(c, parent);
         }else{
-
+            drawHorizontal(c, parent);
         }
     }
 
@@ -68,6 +66,20 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
             final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
             final int top = child.getBottom()+params.bottomMargin;
             final int bottom = top+mDivider.getIntrinsicHeight();
+            mDivider.setBounds(left, top, right, bottom);
+            mDivider.draw(c);
+        }
+    }
+
+    public void drawHorizontal(@NonNull Canvas c, @NonNull RecyclerView parent){
+        final int top = parent.getPaddingTop();
+        final int bottom = parent.getHeight() - parent.getPaddingBottom();
+        final int childCount = parent.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            final View child = parent.getChildAt(i);
+            final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child.getLayoutParams();
+            final int left = child.getRight() + params.rightMargin;
+            final int right = left + mDivider.getIntrinsicHeight();
             mDivider.setBounds(left, top, right, bottom);
             mDivider.draw(c);
         }
